@@ -1,4 +1,4 @@
-import { IconBookmarks, IconSearch, IconUserCircle } from "@tabler/icons-react";
+import { IconBookmarks, IconSearch, IconUserCircle, IconUsers } from "@tabler/icons-react";
 import "./BottomBar.scss";
 import { useLocation } from "wouter";
 import { locale } from "dayjs";
@@ -9,19 +9,26 @@ export default function BottomBar() {
   const goToProfile = () => {
     navigate("/profile");
   };
-  const goToExplore = () => {
-    navigate("/explore");
+
+  const goToSearch = () => {
+    navigate("/search");
   };
+
   const goToSaved = () => {
     navigate("/saved");
+  };
+
+  const goToConnections = () => {
+    navigate("/connections");
   };
 
   const getClassNames = (match_location) => {
     let class_list = ["nav-icon"];
     let _location = location;
 
+    // / is /search
     if (_location === "/" || _location == "") {
-      _location = "/explore";
+      _location = "/search";
     }
 
     if (_location === match_location) {
@@ -33,8 +40,11 @@ export default function BottomBar() {
 
   return (
     <div id="BottomBar">
-      <div className={getClassNames("/explore")} onClick={goToExplore}>
+      <div className={getClassNames("/search")} onClick={goToSearch}>
         <IconSearch size={26} />
+      </div>
+      <div className={getClassNames("/connections")} onClick={goToConnections}>
+        <IconUsers size={26} />
       </div>
       <div className={getClassNames("/saved")} onClick={goToSaved}>
         <IconBookmarks size={26} />

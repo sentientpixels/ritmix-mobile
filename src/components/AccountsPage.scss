@@ -1,0 +1,55 @@
+@use "./colors";
+@use "./vars";
+
+#AccountsPage {
+  padding: vars.$side-margin;
+  padding-bottom: vars.$bottom-padding;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+  align-items: center;
+  width: 100%;
+
+  .app-logo {
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    /* font-style: italic; */
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 6rem;
+    margin-bottom: 0;
+
+    color: colors.$primary-color;
+  }
+
+  .account-card {
+    width: 100%;
+    background: #151515;
+    border: 1px solid #202020;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .add-account-button {
+    background: #151515;
+    outline: none;
+    border: 2px solid colors.$primary-color;
+    color: colors.$primary-color;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    margin-top: 3rem;
+
+    &:hover {
+      background: colors.$secondary-color;
+    }
+
+  }
+
+}

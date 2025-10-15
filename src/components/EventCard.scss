@@ -1,0 +1,78 @@
+@use "./colors";
+
+$card-margin: 1rem;
+
+.EventCard {
+  background: #151515;
+  border: 1px solid #202020;
+  border-radius: 1rem;
+  min-height: 14rem;
+
+  display: grid;
+  overflow: hidden;
+  align-items: stretch;
+
+  grid-template-columns: 5fr 7fr auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "poster details details"
+    "poster details details"
+    "poster buttons buttons";
+
+  .event-poster {
+    flex: 5;
+    background-size: cover;
+    background-position: center;
+    grid-area: poster;
+  }
+
+  .event-details {
+    flex: 7;
+    padding: $card-margin;
+    grid-area: details;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .card-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      .icon-div {
+        height: 1rem;
+        width: 1rem;
+        margin-top: 2px;
+        display: flex;
+
+        svg {
+          height: 100%;
+        }
+      }
+    }
+
+    .SkillPills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+
+  .buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    .bookmark-button {
+      background: none;
+      border: none;
+      outline: none;
+      color: #ffffffaa;
+      cursor: pointer;
+    }
+  }
+}

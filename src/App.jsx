@@ -1,9 +1,27 @@
 import { Route, Switch } from "wouter";
 import "./App.scss";
 import BottomBar from "./components/BottomBar";
-import Profile from "./components/Profile";
+import Connections from "./components/Connections";
+import SearchPage from "./components/SearchPage";
+import { useEffect } from "react";
+import { getSupabaseClient } from "./auth";
+import DynamicProfile from "./components/DynamicProfile";
 
 function App() {
+  const logUser = async () => {
+    const supabase = getSupabaseClient();
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    console.debug(user);
+  };
+
+  useEffect(() => {
+    logUser();
+  }, []);
+
   return (
     <div id="App">
       <Switch>
@@ -11,15 +29,12 @@ function App() {
           <h1>Saved</h1>
         </Route>
 
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile" component={DynamicProfile} />
+        <Route path="/connections" component={Connections} />
 
-        <Route path="/explore">
-          <h1>Ritmix</h1>
-        </Route>
+        <Route path="/search" component={SearchPage} />
 
-        <Route>
-          <h1>Ritmix</h1>
-        </Route>
+        <Route component={SearchPage} />
       </Switch>
 
       <BottomBar />

@@ -1,9 +1,12 @@
-$side-margin: 1rem;
+@use "./colors";
+@use "./vars";
 
 #Profile {
+  padding-bottom: vars.$bottom-padding;
+
   #profile-photo {
     margin-top: -3rem;
-    margin-left: $side-margin;
+    margin-left: vars.$side-margin;
 
     border: 3px solid #202020;
     -webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
@@ -22,26 +25,141 @@ $side-margin: 1rem;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    padding-top: $side-margin;
+    padding-top: vars.$side-margin;
+    gap: 1rem;
   }
 
   #profile-content {
-    padding-left: $side-margin;
-    padding-right: $side-margin;
+    padding-left: vars.$side-margin;
+    padding-right: vars.$side-margin;
 
     border-top: 1px solid #202020;
     -webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
 
-
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-    #dancer-name {
-      margin-bottom: 0;
+    #overview {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+
+      #dancer-details {
+        #dancer-name {
+          margin-top: 0;
+          margin-bottom: 0;
+          line-height: 2rem;
+        }
+
+        #dancer-about {
+          margin-top: 0.5rem;
+          max-width: 75%;
+          font-size: 0.9rem;
+        }
+      }
+
+      #score-card {
+        border: 2px solid #202020;
+        outline: 2px solid #303030;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+
+        #score-text {
+          font-size: 0.8rem;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        #score-number {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: colors.$primary-color;
+        }
+      }
     }
 
-    #dancer-about {
-      margin-top: 0;
+    .stat-card {
+      background: #181818;
+      border: 1px solid #202020;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+
+      .stat-card-name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        align-items: flex-start;
+
+        .stat-name {
+          font-size: 0.8rem;
+        }
+
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: colors.$primary-color;
+        }
+      }
+
+      .dance {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .dance-name-line {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+
+          .dance-name {
+            font-weight: bold;
+          }
+        }
+      }
     }
+
+    #social-media {
+      display: flex;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+
+      .sm-item {
+        background: #181818;
+        border: 1px solid #202020;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  #logout-button {
+    background: #151515;
+    border: 1px solid #202020;
+    outline: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 }
