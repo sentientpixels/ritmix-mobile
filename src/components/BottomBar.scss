@@ -29,7 +29,8 @@
 
     &.selected {
       color: #f0f0f0;
-      background: colors.$secondary-color;
+      /* background: colors.$secondary-color; */
+      background: rgba($color: #ffffff, $alpha: 0.2);
     }
   }
 }

@@ -1,6 +1,8 @@
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { createTheme } from "@mantine/core";
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 
 import { createRoot } from "react-dom/client";
 import "./main.scss";
@@ -16,6 +18,7 @@ import App from "./App.jsx";
 // ...
 
 const theme = createTheme({});
+defineCustomElements(window);
 
 createRoot(document.getElementById("root")).render(
   <MantineProvider theme={theme} defaultColorScheme="dark">

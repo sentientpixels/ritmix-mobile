@@ -22,6 +22,14 @@
     color: colors.$primary-color;
   }
 
+  .account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
   .account-card {
     width: 100%;
     background: #151515;
@@ -33,23 +41,30 @@
     gap: 0.5rem;
   }
 
-  .add-account-button {
-    background: #151515;
-    outline: none;
-    border: 2px solid colors.$primary-color;
-    color: colors.$primary-color;
-    border-radius: 1rem;
+  .buttons {
+
+    width: 100%;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    padding: 0.5rem 3rem;
-    margin-top: 3rem;
+    gap: 1rem;
+    margin-top: 2rem;
 
-    &:hover {
-      background: colors.$secondary-color;
+    .add-account-button {
+      flex: 1;
+      background: #151515;
+      outline: none;
+      border: 2px solid colors.$primary-color;
+      color: colors.$primary-color;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      justify-content: center;
+
+      &:hover {
+        background: colors.$secondary-color;
+      }
     }
-
   }
-
 }
