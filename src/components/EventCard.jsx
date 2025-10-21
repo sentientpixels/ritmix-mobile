@@ -8,6 +8,7 @@ import {
 } from "@tabler/icons-react";
 import "./EventCard.scss";
 import { Badge, Pill, Text, Title } from "@mantine/core";
+import { useLocation } from "wouter";
 
 function CardDetail({ icon, detailValue, className }) {
   return (
@@ -40,6 +41,12 @@ export default function EventCard({ event }) {
     backgroundImage: `url(${event.poster})`,
   };
 
+  const [location, navigate] = useLocation();
+
+  const goToEventDetails = () => {
+    navigate("/event-details");
+  };
+
   return (
     <div className="EventCard">
       <CardDetail
@@ -53,9 +60,13 @@ export default function EventCard({ event }) {
         <CardDetail icon={<IconMapPin />} detailValue={event.city} />
         <CardDetail icon={<IconClockHour10 />} detailValue={event.time} />
         <div className="buttons">
-          <button className="bookmark-button">
+          <button className="ritmix-button event-button">
             <IconBookmark size={16} />
-            <Text size="xs"> SAVE</Text>
+            <Text size="xs">Save</Text>
+          </button>
+          <button className="ritmix-button event-button" onClick={goToEventDetails}>
+            <IconBookmark size={16} />
+            <Text size="xs">View</Text>
           </button>
         </div>
       </div>

@@ -1,0 +1,8 @@
+@use "./colors";
+@use "./vars";
+
+#Saved {
+  margin: vars.$side-margin;
+  padding-bottom: vars.$bottom-padding;
+  padding-top: 5rem;
+}

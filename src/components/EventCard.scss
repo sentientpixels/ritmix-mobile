@@ -15,6 +15,8 @@ $card-margin: 1rem;
   -webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
 
+  cursor: pointer;
+
   grid-template-columns: 4fr 5fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -122,21 +124,15 @@ $card-margin: 1rem;
     justify-content: flex-start;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 
-    .bookmark-button {
-      display: flex;
+    .event-button {
       gap: 0.2rem;
-      align-items: center;
-      background: none;
-      border: none;
-      outline: none;
-      color: #ffffffaa;
-      cursor: pointer;
-      background: #151515;
-      border: 1px solid #202020;
-      outline: none;
+      border: 1px solid #404040;
       border-radius: 0.5rem;
-      padding: 0.5rem;
+      padding: 0.5rem 0.7rem;
+      cursor: pointer;
 
       p {
         margin-top: 1px;

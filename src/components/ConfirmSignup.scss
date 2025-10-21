@@ -1,7 +1,7 @@
 @use "./colors";
 @use "./vars";
 
-#Signup {
+#ConfirmSignup {
   margin: vars.$side-margin;
   padding-bottom: vars.$bottom-padding;
   padding-top: 5rem;
@@ -11,15 +11,12 @@
     margin-left: -2px;
   }
 
-  #signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  #message {
+    max-width: 75%;
+    margin-bottom: 1rem;
   }
 
-  #signup-button {
-    margin-top: 2rem;
+  #login-button {
     float: right;
   }
-
 }

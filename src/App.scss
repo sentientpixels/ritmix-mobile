@@ -1,4 +1,51 @@
+@use "./components/colors";
+@use "./components/vars";
+
 #App {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+}
+
+.app-logo {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  /* font-style: italic; */
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: 6rem;
+  margin-bottom: 0;
+
+  color: colors.$primary-color;
+}
+
+.ritmix-button {
+  background: #151515;
+  border: 1px solid #202020;
+  outline: none;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.ritmix-button-colored {
+  background: #151515;
+  outline: none;
+  border: 2px solid colors.$primary-color;
+  color: colors.$primary-color;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  justify-content: center;
+
+  &:hover {
+    background: colors.$secondary-color;
+  }
 }

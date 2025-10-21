@@ -10,8 +10,10 @@ import Signup from "./components/Signup";
 import { App as CapacitorApp } from "@capacitor/app";
 
 import { Toast } from "@capacitor/toast";
-import AccountsPage from "./components/AccountsPage";
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
+import Saved from "./components/Saved";
+import ConfirmSignup from "./components/ConfirmSignup";
+import EventDetails from "./components/EventDetails";
 
 const showToast = async (text) => {
   await Toast.show({
@@ -30,18 +32,11 @@ function App() {
     console.debug(user);
   };
 
-  const [location, navigate] = useLocation()
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     CapacitorApp.addListener("backButton", ({ canGoBack }) => {
-      showToast(location);
-      const homeRoutes = [
-        "/",
-        "/search",
-        "/saved",
-        "/connections",
-        "/profile",
-      ];
+      const homeRoutes = ["/", "/search", "/saved", "/connections", "/profile"];
 
       if (homeRoutes.includes(location)) {
         CapacitorApp.exitApp();
@@ -63,17 +58,17 @@ function App() {
   return (
     <div id="App">
       <Switch>
-        <Route path="/saved">
-          <h1>Saved</h1>
-        </Route>
+        <Route path="/search" component={SearchPage} />
+        <Route path="/connections" component={Connections} />
+        <Route path="/saved" component={Saved} />
 
         <Route path="/profile" component={DynamicProfile} />
-        <Route path="/signup" component={Signup} />
         <Route path="/profile-page" component={Profile} />
 
-        <Route path="/connections" component={Connections} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/confirm-signup" component={ConfirmSignup} />
 
-        <Route path="/search" component={SearchPage} />
+        <Route path="/event-details" component={EventDetails} />
 
         <Route component={SearchPage} />
       </Switch>

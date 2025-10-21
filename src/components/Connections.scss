@@ -1,0 +1,45 @@
+@use "./colors";
+@use "./vars";
+
+#Connections {
+  margin: vars.$side-margin;
+  padding-bottom: vars.$bottom-padding + 1rem;
+  padding-top: 5rem;
+
+  #header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .connection-list {
+    margin-top: 1.5rem;
+
+    .connections {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  #connections-filter-input {
+    border-radius: 1rem;
+    box-sizing: border-box;
+    width: calc(100vw - vars.$side-margin - vars.$side-margin);
+  }
+}
+
+.ContactItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+  }
+}

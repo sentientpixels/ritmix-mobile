@@ -1,8 +1,10 @@
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+
 import { MantineProvider } from "@mantine/core";
 import { createTheme } from "@mantine/core";
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
-
+import { defineCustomElements } from "@ionic/pwa-elements/loader";
+import { Notifications } from "@mantine/notifications";
 
 import { createRoot } from "react-dom/client";
 import "./main.scss";
@@ -22,6 +24,7 @@ defineCustomElements(window);
 
 createRoot(document.getElementById("root")).render(
   <MantineProvider theme={theme} defaultColorScheme="dark">
+    <Notifications />
     <App />
-  </MantineProvider>,
+  </MantineProvider>
 );
