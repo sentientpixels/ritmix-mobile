@@ -9,9 +9,9 @@ import {
 import "./EventCard.scss";
 import { Badge, Pill, Text, Title } from "@mantine/core";
 
-function CardDetail({ icon, detailValue }) {
+function CardDetail({ icon, detailValue, className }) {
   return (
-    <div className="card-detail">
+    <div className={["card-detail", className].join(" ")}>
       <div className="icon-div">{icon}</div>
       <Text className="detail-value" size="sm">
         {detailValue}
@@ -42,27 +42,38 @@ export default function EventCard({ event }) {
 
   return (
     <div className="EventCard">
+      <CardDetail
+        icon={<IconUserPentagon />}
+        detailValue={event.organiser}
+        className="organiser"
+      />
       <div className="event-poster" style={posterStyle}></div>
       <div className="event-details">
         <Title order={3}>{event.name}</Title>
-        <CardDetail icon={<IconUserPentagon />} detailValue={event.organiser} />
         <CardDetail icon={<IconMapPin />} detailValue={event.city} />
         <CardDetail icon={<IconClockHour10 />} detailValue={event.time} />
+        <div className="buttons">
+          <button className="bookmark-button">
+            <IconBookmark size={16} />
+            <Text size="xs"> SAVE</Text>
+          </button>
+        </div>
+      </div>
+      <div className="pills-div">
         <PillList
           pillItems={event.skill_levels}
           icon={<IconMoodCheck />}
-          pillColor="rgba(176, 99, 99, 1)"
+          // pillColor="rgba(176, 99, 99, 0.3)"
+          pillColor="rgba(255, 255, 255, 0.1)"
+          className="skill-levels"
         />
         <PillList
           pillItems={event.dances}
           icon={<IconMusic />}
-          pillColor="rgba(99, 157, 176, 1)"
+          // pillColor="rgba(99, 157, 176, 0.3)"
+          pillColor="rgba(255, 255, 255, 0.1)"
+          className="dances"
         />
-      </div>
-      <div className="buttons">
-        <button className="bookmark-button">
-          <IconBookmark />
-        </button>
       </div>
     </div>
   );

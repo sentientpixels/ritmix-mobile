@@ -19,6 +19,10 @@ export default function AccountsPage() {
     navigate("/signup");
   };
 
+  const goToProfilePage = () => {
+    navigate("/profile-page");
+  };
+
   return (
     <div id="AccountsPage">
       <Title order={1} className="app-logo">
@@ -34,7 +38,7 @@ export default function AccountsPage() {
         <AccountCard />
       </div>
       <div className="buttons">
-        <button className="add-account-button">
+        <button className="add-account-button" onClick={goToProfilePage}>
           <IconUserPlus />
           <Text>Login</Text>
         </button>

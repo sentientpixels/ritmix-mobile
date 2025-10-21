@@ -10,6 +10,8 @@ import Signup from "./components/Signup";
 import { App as CapacitorApp } from "@capacitor/app";
 
 import { Toast } from "@capacitor/toast";
+import AccountsPage from "./components/AccountsPage";
+import Profile from "./components/Profile"
 
 const showToast = async (text) => {
   await Toast.show({
@@ -67,6 +69,7 @@ function App() {
 
         <Route path="/profile" component={DynamicProfile} />
         <Route path="/signup" component={Signup} />
+        <Route path="/profile-page" component={Profile} />
 
         <Route path="/connections" component={Connections} />
 
