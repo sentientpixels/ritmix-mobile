@@ -16,7 +16,6 @@
     }
 
     #filter-button {
-
       $button-size: 4rem;
 
       outline: none;
@@ -33,7 +32,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
   }
 
@@ -43,5 +41,6 @@
     flex-direction: column;
     gap: 8rem;
   }
+
 
 }

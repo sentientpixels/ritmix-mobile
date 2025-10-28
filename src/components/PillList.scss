@@ -1,0 +1,28 @@
+@use "./colors";
+@use "./vars";
+
+.PillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: vars.$card-margin;
+
+  .badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .icon-div {
+    height: 1rem;
+    width: 1rem;
+    margin-top: 2px;
+    display: flex;
+
+    svg {
+      height: 100%;
+      color: colors.$primary-color;
+    }
+  }
+}

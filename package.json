@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "android": "vite build && npx cap run android",
+    "android": "vite build && npx cap sync && npx cap run android",
     "preview": "vite preview"
   },
   "dependencies": {

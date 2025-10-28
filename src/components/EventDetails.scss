@@ -1,3 +1,82 @@
+@use "./colors";
+@use "./vars";
+
+// the main top level component
 #EventDetails {
-  
+  padding-bottom: vars.$bottom-padding;
+
+  // the actual details section after the cover
+  #event-details {
+    #poster-details {
+      display: flex;
+
+      #event-poster {
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #404040;
+        border-radius: 1rem;
+        height: 20rem;
+
+        margin-top: -5.6rem;
+        margin-left: vars.$side-margin;
+        -webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      #details {
+        margin-left: vars.$side-margin;
+        margin-right: vars.$side-margin;
+        margin-top: vars.$side-margin;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+
+        .organiser {
+          p {
+            font-weight: bold;
+          }
+        }
+
+        #event-name {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    #pills-div {
+      margin-left: vars.$side-margin;
+      display: flex;
+      gap: 1rem;
+    }
+
+    #also-going {
+      margin-left: vars.$side-margin;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    #buttons-div {
+      margin-left: vars.$side-margin;
+      margin-right: vars.$side-margin;
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+
+      .ritmix-button {
+        flex: 1;
+        border: 1px solid colors.$primary-color;
+        color: colors.$primary-color;
+        gap: 0.25rem;
+      }
+    }
+
+    #event-description {
+      margin-left: vars.$side-margin;
+      margin-right: vars.$side-margin;
+      margin-top: 1.5rem;
+    }
+  }
 }
