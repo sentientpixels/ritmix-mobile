@@ -2,6 +2,7 @@ import {
   IconActivity,
   IconBookmark,
   IconClockHour10,
+  IconEdit,
   IconMapPin,
   IconMoodCheck,
   IconMusic,
@@ -48,6 +49,15 @@ export default function EventCard({ event }) {
             <IconBookmark size={16} />
             <Text size="xs">View</Text>
           </button>
+          {event.organized && (
+            <button
+              className="ritmix-button event-button"
+              onClick={goToEventDetails}
+            >
+              <IconEdit size={16} />
+              <Text size="xs">Manage</Text>
+            </button>
+          )}
         </div>
       </div>
       <div className="pills-div">

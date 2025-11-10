@@ -5,4 +5,15 @@
   margin: vars.$side-margin;
   padding-bottom: vars.$bottom-padding;
   padding-top: 5rem;
+
+  #tabs-bar {
+    margin-top: 1rem;
+  }
+
+  #event-list {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
 }
