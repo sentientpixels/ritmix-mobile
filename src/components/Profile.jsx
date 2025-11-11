@@ -6,8 +6,10 @@ import {
   IconEdit,
   IconLink,
   IconLogout,
+  IconPlus,
   IconSettings,
   IconStretching2,
+  IconUserPentagon,
 } from "@tabler/icons-react";
 import { PrimaryColor } from "./colors";
 
@@ -121,6 +123,34 @@ export default function Profile() {
               Advanced Beginner
             </Text>
           </div>
+        </div>
+
+        <div id="brands" className="stat-card">
+          <Text className="stat-card-name">Brands</Text>
+          <div id="brand-list">
+            <div className="brand-item">
+              <Avatar src="" color={PrimaryColor} className="brand-item-avatar">
+                <IconUserPentagon />
+              </Avatar>
+              <Text fw="bold">Latin Twist</Text>
+            </div>
+            <div className="brand-item">
+              <Avatar src="" color={PrimaryColor} className="brand-item-avatar">
+                <IconUserPentagon />
+              </Avatar>
+              <Text fw="bold">Latin Twist</Text>
+            </div>
+            <div className="brand-item">
+              <Avatar src="" color={PrimaryColor} className="brand-item-avatar">
+                <IconUserPentagon />
+              </Avatar>
+              <Text fw="bold">Latin Twist</Text>
+            </div>
+          </div>
+          <button className="ritmix-button-colored" id="create-brand-button">
+            <IconPlus />
+            <Text>Create Brand</Text>
+          </button>
         </div>
 
         <div id="social-media">

@@ -130,6 +130,28 @@
       }
     }
 
+    #brands {
+      #brand-list {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .brand-item {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+
+
+      }
+
+      #create-brand-button {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+    }
+
     #social-media {
       display: flex;
       /* flex-direction: column; */

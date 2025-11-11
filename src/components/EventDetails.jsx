@@ -1,4 +1,4 @@
-import { Avatar, Text, Title } from "@mantine/core";
+import { Avatar, Modal, Text, Title, useModalsStack } from "@mantine/core";
 import "./EventDetails.scss";
 import ColorThief from "colorthief";
 import { useEffect, useState } from "react";
@@ -20,10 +20,12 @@ import {
 } from "@tabler/icons-react";
 import PillList from "./PillList";
 import { PrimaryColor } from "./colors";
+import RSVPModal from "./RSVPModal";
 
 export default function EventDetails() {
   const [coverString, setCoverString] = useState("");
   const [eventDetails, setEventDetails] = useState({});
+  const modals = useModalsStack(["rsvp-modal"]);
 
   const coverStyle = {
     background: `linear-gradient(180deg,
@@ -54,7 +56,7 @@ export default function EventDetails() {
       const _color = colorThief.getColor(img);
       setCoverString(`rgb(${_color[0]}, ${_color[1]}, ${_color[2]})`);
     } else {
-      img.addEventListener("load", function() {
+      img.addEventListener("load", function () {
         const _color = colorThief.getColor(img);
         setCoverString(`rgb(${_color[0]}, ${_color[1]}, ${_color[2]})`);
       });
@@ -86,6 +88,10 @@ export default function EventDetails() {
     return true;
   };
 
+  const openRsvpModal = () => {
+    modals.open("rsvp-modal");
+  };
+
   useEffect(() => {
     if (eventHasCover(eventDetails)) {
       setCoverString(`url(${eventDetails.cover})`);
@@ -100,6 +106,12 @@ export default function EventDetails() {
 
   return (
     <div id="EventDetails">
+      <Modal.Stack>
+        <Modal {...modals.register("rsvp-modal")} title="RSVP" centered>
+          <RSVPModal />
+        </Modal>
+      </Modal.Stack>
+
       <div id="event-cover" style={coverStyle}></div>
       <div id="event-details">
         <div id="poster-details">
@@ -175,7 +187,10 @@ export default function EventDetails() {
               Save
             </Text>
           </button>
-          <button className="ritmix-button event-button">
+          <button
+            className="ritmix-button event-button"
+            onClick={openRsvpModal}
+          >
             <IconUserQuestion size={16} />
             <Text size="sm" fw="bold">
               RSVP
